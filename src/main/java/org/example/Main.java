@@ -28,6 +28,12 @@ public class Main {
                 for (명언모음집 명언 : 명언집) {
                     System.out.printf("%d / %s / %s\n", 명언.getId(), 명언.get작가(), 명언.get명언());
                 }
+            } else if (input.contains("삭제?id=")) {
+                int idNumber = Integer.parseInt(input.substring(6));
+                if (명언집.get(idNumber - 1).getId() == idNumber) {
+                    System.out.printf("%d번 명언이 삭제되었습니다.\n", idNumber);
+                    명언집.get(idNumber - 1).setId(0);
+                }
             }
         }
     }
