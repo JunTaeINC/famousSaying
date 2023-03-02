@@ -12,7 +12,7 @@ public class Main {
         System.out.println("== 명언 앱 ==");
         while (true) {
             System.out.print("명언) ");
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim();
             if (input.equals("종료")) {
                 break;
             } else if (input.equals("등록")) {
@@ -35,6 +35,18 @@ public class Main {
                     명언집.get(idNumber - 1).setId(0);
                 } else {
                     System.out.printf("%d번 명언은 존재하지 않습니다.\n", idNumber);
+                }
+            } else if (input.contains("수정?id=")) {
+                int idNumber = Integer.parseInt(input.substring(6));
+                if (명언집.get(idNumber - 1).getId() == idNumber) {
+                    System.out.printf("명언(기존) : %s\n", 명언집.get(idNumber - 1).get명언());
+                    System.out.print("명언 : ");
+                    String modifyFamousSaying = scanner.nextLine();
+                    System.out.printf("작가(기존) : %s\n", 명언집.get(idNumber - 1).get작가());
+                    System.out.print("작가 : ");
+                    String modifyAuthor = scanner.nextLine();
+                    명언집.get(idNumber - 1).set명언(modifyFamousSaying);
+                    명언집.get(idNumber - 1).set작가(modifyAuthor);
                 }
             }
         }
