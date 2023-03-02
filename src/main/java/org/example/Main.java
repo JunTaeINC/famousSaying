@@ -32,7 +32,7 @@ public class Main {
                 int idNumber = Integer.parseInt(input.substring(6));
                 if (명언집.get(idNumber - 1).getId() == idNumber) {
                     System.out.printf("%d번 명언이 삭제되었습니다.\n", idNumber);
-                    명언집.get(idNumber - 1).setId(0);
+                    명언집.remove(idNumber - 1);
                 } else {
                     System.out.printf("%d번 명언은 존재하지 않습니다.\n", idNumber);
                 }
